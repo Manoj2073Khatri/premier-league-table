@@ -76,10 +76,8 @@ const LeagueTable = () => {
             });
 
             clubsArray.sort((a, b) => {
-              if (a.points > b.points) return -1;
-              if (a.points < b.points) return 1;
-              if (a.goalsScored - a.goalsConceded > b.goalsScored - b.goalsConceded) return -1;
-              if (a.goalsScored - a.goalsConceded < b.goalsScored - b.goalsConceded) return 1;
+                if(a.name > b.name) return 1;
+                if(a.name < b.name) return -1;
               return 0;
             });
 
@@ -111,15 +109,15 @@ const LeagueTable = () => {
                 <th>Won</th>
                 <th>Drawn</th>
                 <th>Lost</th>
-                <th>GF(goal scored)</th>
-                <th>GA(goal concede)</th>
-                <th>GD(goal difference)</th>
+                <th>GF</th>
+                <th>GA</th>
+                <th>GD</th>
                 <th>Points</th>
                 <th>Form</th>
                 
             </tr>
        {
-         clubs.filter((data,index)=>{return index>=1}).map((data,index)=>{
+         clubs.filter((data,index)=>{return data.name!=='draw'}).map((data,index)=>{
             return <tr key={index}>
              <td>{index + 1}</td>
              <td>{data.name}</td>
