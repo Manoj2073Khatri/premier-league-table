@@ -3,7 +3,7 @@ import { createSlice} from '@reduxjs/toolkit';
 
 const initialState= { 
     modalState: false,
-    dataId:'',
+    name:'',
 }
 
 export const modalSlice = createSlice({
@@ -12,7 +12,7 @@ export const modalSlice = createSlice({
     reducers: {
       modalOpen: (state,action) => {
         state.modalState = true;
-        state.dataId = action.payload;
+        state.name = action.payload;
         document.body.style.overflow = "hidden";
       },
       modalClose: (state) => {
