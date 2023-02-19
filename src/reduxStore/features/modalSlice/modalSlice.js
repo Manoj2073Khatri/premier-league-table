@@ -13,9 +13,11 @@ export const modalSlice = createSlice({
       modalOpen: (state,action) => {
         state.modalState = true;
         state.dataId = action.payload;
+        document.body.style.overflow = "hidden";
       },
       modalClose: (state) => {
         state.modalState = false;
+        document.body.style.removeProperty('overflow');
       },
     
     },
