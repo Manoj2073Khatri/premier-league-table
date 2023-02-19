@@ -2,6 +2,14 @@ table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    .club_info{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      img{
+        margin-right: 5px;
+      }
+    }
   }
   
   th {

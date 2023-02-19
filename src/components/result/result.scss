@@ -1,11 +1,17 @@
 
-    .result_wrapper{
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
+    .result{
+        &_wrapper{
+
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+       &_body{
+       
         .win{
             background-color: green;
-           padding:6px 8px;
+           padding:6px 7px;
            border-radius: 50%;
            color: #fff;
            font-size: 12px;
@@ -13,7 +19,7 @@
         }
         .lose{
             background-color: red;
-            padding:6px 8px;
+            padding:6px 9px;
            border-radius: 50%;
            color: #fff;
            font-size: 12px;
@@ -27,5 +33,7 @@
             font-size: 12px;
             margin:0 5px;
         }
+       
+       }
     }
 
