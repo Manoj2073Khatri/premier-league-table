@@ -6,7 +6,7 @@ function App() {
     <div className='main'>
        <h1>Premier league standings</h1>
        <LeagueTable/>
-       
+   
     </div>
   );
 }
