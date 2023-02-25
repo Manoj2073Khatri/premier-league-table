@@ -1,23 +1,31 @@
 
-    .win{
-        background-color: green;
-       padding:6px 8px;
-       border-radius: 50%;
-       color: #fff;
-       font-size: 12px;
-    }
-    .lose{
-        background-color: red;
-        padding:6px 8px;
-       border-radius: 50%;
-       color: #fff;
-       font-size: 12px;
-    }
-    .draw{
-        background-color: gray;
-        padding:6px 8px;
-        border-radius: 50%;
-        color: #fff;
-        font-size: 12px;
+    .result_wrapper{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        .win{
+            background-color: green;
+           padding:6px 8px;
+           border-radius: 50%;
+           color: #fff;
+           font-size: 12px;
+           margin:0 5px;
+        }
+        .lose{
+            background-color: red;
+            padding:6px 8px;
+           border-radius: 50%;
+           color: #fff;
+           font-size: 12px;
+           margin:0 5px;
+        }
+        .draw{
+            background-color: gray;
+            padding:6px 8px;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 12px;
+            margin:0 5px;
+        }
     }
 

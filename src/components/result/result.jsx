@@ -2,15 +2,14 @@ import React, { useState,useEffect } from 'react'
 import './result.scss'
 const Result = ({result}) => {
 
-    const [gameState,setGameState] =useState('')
+    const [gameState,setGameState] =useState([])
 
     useEffect(() => {
         
        
         let isMounted=true;
         if(isMounted && result){
-
-              setGameState(result);
+           setGameState( result.slice(-5).reverse());
 
         }
     
@@ -21,15 +20,21 @@ const Result = ({result}) => {
     
   return (
     <div className='result_wrapper'>
-        {
-           gameState==="win" &&  <span className='win'>W</span>
+       {
+        gameState.map((data,index)=>{
+          return(<div key={index}>
+             {
+           data==="W" &&  <span className='win'>W</span>
         }
         {
-             gameState==="lose" &&  <span className='lose'>L</span>
+             data==="L" &&  <span className='lose'>L</span>
         }
         
        {
-            gameState==="draw" &&  <span className='draw'>D</span>
+            data==="D" &&  <span className='draw'>D</span>
+       }
+          </div>)
+        })
        }
        
      
