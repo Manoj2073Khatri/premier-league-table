@@ -11,32 +11,27 @@ const ClubInfo = () => {
   const dispatch = useDispatch();
   const modalState = useSelector((state) => state.modal.modalState); 
   const clubs = useSelector((state) => state.premierLeague.clubs);
-  const id = useSelector((state) => state.modal.dataId);
+  const name = useSelector((state) => state.modal.name);
 
    const [clubData,setClubData]=useState();
 
     useEffect(() => {
        let isMounted = true;
        if(isMounted){
-
-        setClubData(clubs.filter((data,index)=>{
-         // console.log(index,id)
-          return index===id
-        })[0]) 
+       // console.log(clubs)
+        setClubData(clubs.find((data,index)=> data.name===name)) 
        }
-          
-      
-
+         
       return () => {
-        isMounted=true;
+        isMounted=false;
       }
-    }, [clubData, clubs, id]);
+    }, [clubData, clubs, name]);
     
 
   return (
      <>
        {
-        id &&  modalState && clubData && <div className='modal_wrapper' onClick={()=>dispatch(modalClose())}>
+        name &&  modalState && clubData && <div className='modal_wrapper' onClick={()=>dispatch(modalClose())}>
         <div className={`modal_body ${modalState? 'open':''}`}>
             <div className='club-details'>
                 
