@@ -119,7 +119,6 @@ const LeagueTable = () => {
      
   const handleClick=(name)=>{
        dispatch(modalOpen(name));
-       //console.log(dataIndex)
       
   }
  
