@@ -28,6 +28,7 @@
             justify-content: flex-start;
             align-items:center;
             padding: 2rem;
+            border-radius: 8px;
             &_image{
                 
             }
@@ -37,7 +38,7 @@
                 justify-content: flex-start;
                 align-items:center;
                 &-title{
-                   
+                   border-bottom: 1px solid green;
                 }
                 &-details{
                     display: flex;

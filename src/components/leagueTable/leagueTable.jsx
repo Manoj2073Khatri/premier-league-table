@@ -18,6 +18,9 @@ const LeagueTable = () => {
     
    
     useEffect(() => {
+       let isMounted = true;
+
+       if(isMounted){
         const fetchClubs = async () => {
           dispatch(fetchClubsStart());
        
@@ -27,7 +30,6 @@ const LeagueTable = () => {
             );
             const matches =await response.data.matches;
           
-            console.log(matches);
 
             const clubs = matches.reduce((acc, match) => {
 
@@ -77,19 +79,15 @@ const LeagueTable = () => {
                 acc[team2].goalsConceded += score1;
                 acc[team2].lastfivegame.push('D');
               }
-             // console.log("acc: " , acc);
 
               return acc;
 
             }, {});
 
-             console.log("clubs: " , clubs);
             const clubsArray = Object.values(clubs).map((club) => {
               const points = club.wins * 3 + club.draws;
               const goalDifference=club.goalsScored-club.goalsConceded;
               const gamesPlayed=club.wins+club.draws+club.losses;
-
-             // const lastfivegames=getLastFiveResults(club.name);
 
               return { ...club, points,goalDifference,gamesPlayed};
             });
@@ -107,15 +105,22 @@ const LeagueTable = () => {
             dispatch(fetchClubsFailure());
           }
         };
+
         fetchClubs();
+       }
+
+       return () => {
+        isMounted=true;
+      }
+
       }, [dispatch]);
 
 
      
   const handleClick=(dataIndex)=>{
        dispatch(modalOpen(dataIndex));
+       //console.log(dataIndex)
       
-       
   }
  
 
