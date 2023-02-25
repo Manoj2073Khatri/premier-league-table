@@ -22,7 +22,7 @@ const Result = ({result}) => {
     <div className='result_wrapper'>
        {
         gameState.map((data,index)=>{
-          return(<div key={index}>
+          return(<div key={index} className="result_body">
              {
            data==="W" &&  <span className='win'>W</span>
         }
